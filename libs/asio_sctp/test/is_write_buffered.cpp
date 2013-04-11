@@ -101,18 +101,18 @@ void is_write_buffered_test()
 
 #ifdef BOOST_ASIO_HAVE_SCTP
   BOOST_CHECK(!boost::asio::is_write_buffered<
-      boost::asio::ip::sctp::socket>::value);
+      boost::asio_sctp::ip::sctp::socket>::value);
 
   BOOST_CHECK(!boost::asio::is_write_buffered<
       boost::asio::buffered_read_stream<
-        boost::asio::ip::sctp::socket> >::value);
+        boost::asio_sctp::ip::sctp::socket> >::value);
 
   BOOST_CHECK(!!boost::asio::is_write_buffered<
       boost::asio::buffered_write_stream<
-        boost::asio::ip::sctp::socket> >::value);
+        boost::asio_sctp::ip::sctp::socket> >::value);
 
   BOOST_CHECK(!!boost::asio::is_write_buffered<
-      boost::asio::buffered_stream<boost::asio::ip::sctp::socket> >::value);
+      boost::asio::buffered_stream<boost::asio_sctp::ip::sctp::socket> >::value);
 #endif // BOOST_ASIO_HAVE_SCTP
 
   BOOST_CHECK(!boost::asio::is_write_buffered<test_stream>::value);

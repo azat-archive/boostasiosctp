@@ -8,6 +8,7 @@ cmake_minimum_required(VERSION 2.6)
 find_package(Boost REQUIRED COMPONENTS system unit_test_framework test_exec_monitor)
 
 include_directories("../../../")
+add_definitions(-DBOOST_ASIO_HAVE_SCTP)
 
 function(FindLibraryOrFatalError libraryName)
     unset(LIBRARY CACHE)
