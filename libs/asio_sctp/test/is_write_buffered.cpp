@@ -22,7 +22,7 @@
 
 #include <boost/asio_sctp/ip/sctp.hpp>
 
-#include "unit_test.hpp"
+#include <boost/test/unit_test.hpp>
 
 using namespace std; // For memcmp, memcpy and memset.
 
@@ -137,9 +137,9 @@ void is_write_buffered_test()
       boost::asio::buffered_stream<test_stream> >::value);
 }
 
-test_suite* init_unit_test_suite(int, char*[])
+::boost::unit_test::test_suite* init_unit_test_suite(int, char*[])
 {
-  test_suite* test = BOOST_TEST_SUITE("is_write_buffered");
+  ::boost::unit_test::test_suite* test = BOOST_TEST_SUITE("is_write_buffered");
   test->add(BOOST_TEST_CASE(&is_write_buffered_test));
   return test;
 }
