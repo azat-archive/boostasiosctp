@@ -101,7 +101,7 @@ inline int getladdrs(socket_type s, socket_addr_type** addrs,
   return result;
 }
 
-inline int freeladdrs(socket_addr_type* addrs)
+inline void freeladdrs(socket_addr_type* addrs)
 {
   ::sctp_freeladdrs(addrs);
 }
@@ -127,7 +127,7 @@ inline int getpaddrs(socket_type s, socket_addr_type** addrs,
   return result;
 }
 
-inline int freepaddrs(socket_addr_type* addrs)
+inline void freepaddrs(socket_addr_type* addrs)
 {
   ::sctp_freepaddrs(addrs);
 }
