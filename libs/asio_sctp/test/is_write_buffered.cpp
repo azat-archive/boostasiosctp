@@ -8,23 +8,13 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //
 
-// Disable autolinking for unit tests.
-#if !defined(BOOST_ALL_NO_LIB)
-#define BOOST_ALL_NO_LIB 1
-#endif // !defined(BOOST_ALL_NO_LIB)
-
 // Test that header file is self-contained.
 #include <boost/asio/is_write_buffered.hpp>
 
-#include <boost/bind.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/asio.hpp>
-
 #include <boost/asio_sctp/ip/sctp.hpp>
-
 #include <boost/test/unit_test.hpp>
-
-using namespace std; // For memcmp, memcpy and memset.
 
 class test_stream
   : private boost::noncopyable
