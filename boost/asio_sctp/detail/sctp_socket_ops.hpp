@@ -50,12 +50,12 @@ inline int call_bind_add(SockLenType msghdr::*,
 inline int bind_add(socket_type s, const socket_addr_type* addr,
     std::size_t addrlen, boost::system::error_code& ec)
 {
-  clear_error(ec);
+  ec.clear();
   int result = error_wrapper(call_bind_add(
         &msghdr::msg_namelen, s, addr, addrlen), ec);
 #if defined(BOOST_WINDOWS)
   if (result == 0)
-    clear_error(ec);
+    ec.clear();
 #endif
   return result;
 }
@@ -70,12 +70,12 @@ inline int call_bind_remove(SockLenType msghdr::*,
 inline int bind_remove(socket_type s, const socket_addr_type* addr,
     std::size_t addrlen, boost::system::error_code& ec)
 {
-  clear_error(ec);
+  ec.clear();
   int result = error_wrapper(call_bind_remove(
         &msghdr::msg_namelen, s, addr, addrlen), ec);
 #if defined(BOOST_WINDOWS)
   if (result == 0)
-    clear_error(ec);
+    ec.clear();
 #endif
   return result;
 }
@@ -91,12 +91,12 @@ inline int call_getladdrs(SockLenType msghdr::*,
 inline int getladdrs(socket_type s, socket_addr_type** addrs,
     boost::system::error_code& ec)
 {
-  clear_error(ec);
+  ec.clear();
   int result = error_wrapper(call_getladdrs(
         &msghdr::msg_namelen, s, addrs), ec);
 #if defined(BOOST_WINDOWS)
   if (result == 0)
-    clear_error(ec);
+    ec.clear();
 #endif
   return result;
 }
@@ -117,12 +117,12 @@ inline int call_getpaddrs(SockLenType msghdr::*,
 inline int getpaddrs(socket_type s, socket_addr_type** addrs,
     boost::system::error_code& ec)
 {
-  clear_error(ec);
+  ec.clear();
   int result = error_wrapper(call_getpaddrs(
         &msghdr::msg_namelen, s, addrs), ec);
 #if defined(BOOST_WINDOWS)
   if (result == 0)
-    clear_error(ec);
+    ec.clear();
 #endif
   return result;
 }
