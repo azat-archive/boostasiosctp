@@ -1,8 +1,4 @@
 
-#
-# Cmake rules for twosome project
-#
-
 cmake_minimum_required(VERSION 2.6)
 
 find_package(Boost REQUIRED COMPONENTS system unit_test_framework test_exec_monitor)
@@ -33,7 +29,6 @@ endmacro(FindLibrariesOrFatalError)
 
 FindLibrariesOrFatalError("boost_system boost_unit_test_framework sctp boost_test_exec_monitor")
 
-# twosome server
 list(APPEND SOURCES "is_write_buffered.cpp")
 add_executable(is_write_buffered ${SOURCES})
 target_link_libraries(is_write_buffered ${LIBS})
